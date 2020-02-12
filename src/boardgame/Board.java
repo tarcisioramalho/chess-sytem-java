@@ -27,4 +27,18 @@ public class Board {
     public void setColumns(int columns) {
         this.columns = columns;
     }
+
+    public Piece piece(int row, int column) {
+        return pieces[row][column];
+    }
+
+    /**
+     * Overload piece method
+     * @param position
+     * @return
+     */
+    public Piece piece(Position position) {
+        return pieces[position.getRow()][position.getColumn()];
+    }
+
 }
