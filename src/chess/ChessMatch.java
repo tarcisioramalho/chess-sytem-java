@@ -15,13 +15,13 @@ public class ChessMatch {
     }
 
     public ChessPiece[][] getPieces() {
-        ChessPiece[][] matriz = new ChessPiece[board.getRows()][board.getColumns()];
+        ChessPiece[][] matrix = new ChessPiece[board.getRows()][board.getColumns()];
         for (int i = 0; i < board.getRows(); i++) {
             for (int j = 0; j < board.getColumns(); j++) {
-                matriz[i][j] = (ChessPiece) board.piece(i, j);
+                matrix[i][j] = (ChessPiece) board.piece(i, j);
             }
         }
-        return matriz;
+        return matrix;
     }
 
     public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition){
@@ -42,6 +42,9 @@ public class ChessMatch {
     private void valideteSourcePosition(Position position) {
         if(!board.thereIsAPiece(position)){
             throw new ChessException("There is no piece on source position");
+        }
+        if(!board.piece(position).isThereAnyPossibleMove()){
+            throw new ChessException(("There is no possible moves for the chosen piece"));
         }
 
     }
