@@ -21,16 +21,15 @@ public abstract class Piece {
     }
 
     public boolean isThereAnyPossibleMove(){
-        boolean isThereAnyPossibleMove = false;
         boolean[][] matrix = possibleMoves();
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 if (matrix[i][j]){
-                    isThereAnyPossibleMove = true;
+                    return true;
                 }
             }
         }
-        return isThereAnyPossibleMove;
+        return false;
     }
 
 }
