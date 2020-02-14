@@ -24,56 +24,55 @@ public class King extends ChessPiece {
     public boolean[][] possibleMoves() {
         boolean[][] matrix = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
-        Position position = new Position(0, 0);
+        Position p = new Position(0, 0);
 
         // above
-        position.setValues(position.getRow() - 1, position.getColumn());
-        if (getBoard().positionExists(position) && canMove(position)) {
-            matrix[position.getRow()][position.getColumn()] = true;
+        p.setValues(position.getRow() - 1, position.getColumn());
+        if (getBoard().positionExists(p) && canMove(p)) {
+            matrix[p.getRow()][p.getColumn()] = true;
         }
 
         // below
-        position.setValues(position.getRow() + 1, position.getColumn());
-        if (getBoard().positionExists(position) && canMove(position)) {
-            matrix[position.getRow()][position.getColumn()] = true;
+        p.setValues(position.getRow() + 1, position.getColumn());
+        if (getBoard().positionExists(p) && canMove(p)) {
+            matrix[p.getRow()][p.getColumn()] = true;
         }
 
         // left
-        position.setValues(position.getRow(), position.getColumn() - 1);
-        if (getBoard().positionExists(position) && canMove(position)) {
-            matrix[position.getRow()][position.getColumn()] = true;
+        p.setValues(position.getRow(), position.getColumn() - 1);
+        if (getBoard().positionExists(p) && canMove(p)) {
+            matrix[p.getRow()][p.getColumn()] = true;
         }
 
         // Right
-        position.setValues(position.getRow(), position.getColumn() + 1);
-        if (getBoard().positionExists(position) && canMove(position)) {
-            matrix[position.getRow()][position.getColumn()] = true;
+        p.setValues(position.getRow(), position.getColumn() + 1);
+        if (getBoard().positionExists(p) && canMove(p)) {
+            matrix[p.getRow()][p.getColumn()] = true;
         }
 
         // NW
-        position.setValues(position.getRow() - 1, position.getColumn() - 1);
-        if (getBoard().positionExists(position) && canMove(position)) {
-            matrix[position.getRow()][position.getColumn()] = true;
+        p.setValues(position.getRow() - 1, position.getColumn() - 1);
+        if (getBoard().positionExists(p) && canMove(p)) {
+            matrix[p.getRow()][p.getColumn()] = true;
         }
 
         // NE
-        position.setValues(position.getRow() - 1, position.getColumn() + 1);
-        if (getBoard().positionExists(position) && canMove(position)) {
-            matrix[position.getRow()][position.getColumn()] = true;
+        p.setValues(position.getRow() - 1, position.getColumn() + 1);
+        if (getBoard().positionExists(p) && canMove(p)) {
+            matrix[p.getRow()][p.getColumn()] = true;
         }
 
         // SW
-        position.setValues(position.getRow() + 1, position.getColumn() - 1);
-        if (getBoard().positionExists(position) && canMove(position)) {
-            matrix[position.getRow()][position.getColumn()] = true;
+        p.setValues(position.getRow() + 1, position.getColumn() - 1);
+        if (getBoard().positionExists(p) && canMove(p)) {
+            matrix[p.getRow()][p.getColumn()] = true;
         }
 
         // SE
-        position.setValues(position.getRow() + 1, position.getColumn() + 1);
-        if (getBoard().positionExists(position) && canMove(position)) {
-            matrix[position.getRow()][position.getColumn()] = true;
+        p.setValues(position.getRow() + 1, position.getColumn() + 1);
+        if (getBoard().positionExists(p) && canMove(p)) {
+            matrix[p.getRow()][p.getColumn()] = true;
         }
-
 
         return matrix;
     }
